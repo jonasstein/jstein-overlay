@@ -11,7 +11,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="dev-util/cmake >=app-text/texlive-2015 >=dev-tex/latexmk-435 dev-tex/biblatex >=sys-devel/gcc-4.9:* >=sys-devel/flex-2.5.39-r1 >=sys-libs/glibc-2.22"
-RDEPEND=">=sys-devel/gcc-4.9:* >=sys-devel/flex-2.5.39-r1 >=sys-libs/glibc-2.22"
+DEPEND="dev-util/cmake >=app-text/texlive-2015 >=dev-tex/latexmk-435 dev-tex/biblatex >=sys-devel/gcc-4.9:* sys-devel/flex >=sys-libs/glibc-2.22"
+RDEPEND=">=sys-devel/gcc-4.9:* sys-devel/flex >=sys-libs/glibc-2.22"
 
 #CMAKE_MIN_VERSION=
