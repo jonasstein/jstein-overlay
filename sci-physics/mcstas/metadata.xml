@@ -9,4 +9,8 @@
     <changelog>https://github.com/McStasMcXtrace/McCode/blob/master/CHANGES_McStas</changelog>
     <doc>http://www.mcstas.org/documentation/manual/</doc>
   </upstream>
+  <maintainer type="person">
+    <email>jstein@gentoo.org</email>
+    <name>Jonas Stein</name>
+  </maintainer>
 </pkgmetadata>
