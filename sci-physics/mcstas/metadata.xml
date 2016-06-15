@@ -4,4 +4,9 @@
   <longdescription>
      McStas is a general tool for simulating neutron scattering instruments and experiments. 
   </longdescription>
+   <upstream>
+    <bugs-to>https://github.com/McStasMcXtrace/McCode/issues</bugs-to>
+    <changelog>https://github.com/McStasMcXtrace/McCode/blob/master/CHANGES_McStas</changelog>
+    <doc>http://www.mcstas.org/documentation/manual/</doc>
+  </upstream>
 </pkgmetadata>

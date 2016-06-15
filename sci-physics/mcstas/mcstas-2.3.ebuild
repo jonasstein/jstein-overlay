@@ -19,9 +19,9 @@ RDEPEND=">=sys-devel/gcc-4.9:* sys-devel/flex >=sys-libs/glibc-2.22"
 # >= cmake 3 which supports the "target_compile_options" directive
 CMAKE_MIN_VERSION=3
 
-
 src_install()
 {
-		dobin mcstas mcpltool mcformat
-#        dodoc README.txt
+	dobin "${BUILD_DIR}"/mcstas "${BUILD_DIR}"/mcpltool "${BUILD_DIR}"/mcformat
+	doman "${BUILD_DIR}"/work/doc/man/mcstas.1
+	doman "${BUILD_DIR}"/work/doc/man/mcformat.1
 }
