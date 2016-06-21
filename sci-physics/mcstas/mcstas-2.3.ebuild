@@ -8,13 +8,16 @@ inherit cmake-utils
 
 DESCRIPTION="A neutron ray-trace simulation package"
 HOMEPAGE="http://www.mcstas.org/"
-SRC_URI="http://downloads.mcstas.org/mcstas-2.3/unix/McStas-2.3-UNIX-src/mcstas-2.3-src.tar.gz"
+SRC_URI="http://downloads.mcstas.org/mcstas-${PV}/unix/McStas-${PV}-UNIX-src/mcstas-${PV}-src.tar.gz"
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="2.3"
 KEYWORDS="~amd64 ~x86"
 S="${WORKDIR}/${P}-src"
-DEPEND="dev-util/cmake >=app-text/texlive-2015 >=dev-tex/latexmk-435 dev-tex/biblatex >=sys-devel/gcc-4.9:* sys-devel/flex >=sys-libs/glibc-2.22"
-RDEPEND=">=sys-devel/gcc-4.9:* sys-devel/flex >=sys-libs/glibc-2.22"
+DEPEND="dev-util/cmake
+	sys-devel/flex
+	sys-libs/glibc"
+RDEPEND="sys-devel/flex
+	sys-libs/glibc"
 
 # >= cmake 3 which supports the "target_compile_options" directive
 CMAKE_MIN_VERSION=3
