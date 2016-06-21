@@ -21,15 +21,4 @@ COMPSFOLDER="/usr/share/mcstas-${PV}/"
 src_install()
 {
 	insinto ${COMPSFOLDER} ; doins -r contrib contrib data examples libs misc monitors obsolete optics samples share sources
-#	insinto ${COMPSFOLDER}/contrib ; doins -r contrib/*
-#	insinto ${COMPSFOLDER}/data ; doins -r data/*
-#	insinto ${COMPSFOLDER}/examples ; doins -r examples/*
-#	insinto ${COMPSFOLDER}/libs ; doins -r libs/*
-#	insinto ${COMPSFOLDER}/misc ; doins -r misc/*
-#	insinto ${COMPSFOLDER}/monitors ; doins -r monitors/*
-#	insinto ${COMPSFOLDER}/obsolete ; doins -r obsolete/*
-#	insinto ${COMPSFOLDER}/optics ; doins -r optics/*
-#	insinto ${COMPSFOLDER}/samples ; doins -r samples/*
-#	insinto ${COMPSFOLDER}/share ; doins -r share/*
-#	insinto ${COMPSFOLDER}/sources ; doins -r sources/*
 }
