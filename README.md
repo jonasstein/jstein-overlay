@@ -1,6 +1,8 @@
+```bash
 mkdir /usr/local/overlays/
+```
 
-
+```bash
 cat << EOF > /etc/portage/repos.conf/jstein-overlay.conf
 [DEFAULT]
 main-repo = gentoo
@@ -13,5 +15,5 @@ sync-uri = https://github.com/jonasstein/jstein-overlay
 auto-sync = no
 sync-depth = 0
 EOF
-
+```
 
