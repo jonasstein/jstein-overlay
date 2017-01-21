@@ -47,7 +47,7 @@ S=${WORKDIR}
 
 src_prepare() {
 	default
-	mv ./${PN}${PV}/* ./
+	mv ./${PN}${PV}/* ./ || die
 	find hunspell quazip utilities/poppler-data qtsingleapplication -delete || die
 	if use video; then
 		sed "/^PHONON/s:$:true:g" -i ${PN}.pro || die
