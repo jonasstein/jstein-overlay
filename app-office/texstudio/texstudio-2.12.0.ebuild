@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}/TeXstudio%20${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~ppc64 x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~ppc64 x86 ~x86-fbsd"
 IUSE="video"
 
 COMMON_DEPEND="
@@ -47,22 +47,14 @@ S=${WORKDIR}
 
 src_prepare() {
 	default
-	
 	mv ./${PN}${PV}/* ./
-	
 	find hunspell quazip utilities/poppler-data qtsingleapplication -delete || die
-
 	if use video; then
 		sed "/^PHONON/s:$:true:g" -i ${PN}.pro || die
 	fi
-
-	sed \
-		-e '/qtsingleapplication.pri/d' \
-		-i ${PN}.pro || die
-
+	sed -e '/qtsingleapplication.pri/d' -i ${PN}.pro || die
 	cp "${FILESDIR}"/texmakerx_my.pri ${PN}.pri || die
 	eprefixify ${PN}.pri
-
 	# fix build with quazip-0.7.2 - bug 597930
 	sed -i ${PN}.pro -e "s|include/quazip|&5|" || die
 	sed -i ${PN}.pri -i ${PN}.pro -e "s/-lquazip/&5/" || die
@@ -93,4 +85,3 @@ pkg_postrm() {
 	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
 }
-
