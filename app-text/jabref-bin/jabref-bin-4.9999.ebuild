@@ -5,8 +5,9 @@ EAPI=6
 
 inherit eutils java-pkg-2
 
-DESCRIPTION="Java GUI for managing BibTeX and other bibliographies"
+DESCRIPTION="Java GUI manages bibliographies in a BibTeX database"
 HOMEPAGE="http://www.jabref.org/"
+KEYWORDS=""
 
 LICENSE="MIT"
 SLOT="0"
