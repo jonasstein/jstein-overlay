@@ -1,13 +1,13 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit fdo-mime gnome2-utils prefix qmake-utils
+inherit gnome2-utils prefix qmake-utils xdg-utils
 
 DESCRIPTION="Free cross-platform LaTeX editor (fork from texmakerX)"
-HOMEPAGE="http://texstudio.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}/TeXstudio%20${PV}/${P}.tar.gz"
+HOMEPAGE="http://www.texstudio.org/ https://github.com/texstudio-org/texstudio"
+SRC_URI="https://github.com/texstudio-org/texstudio/archive/2.12.8.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,7 +17,7 @@ IUSE="video"
 COMMON_DEPEND="
 	app-text/hunspell:=
 	app-text/poppler[qt5]
-	>=dev-libs/quazip-0.7.2[qt5]
+	>=dev-libs/quazip-0.7.2[qt5(+)]
 	dev-qt/designer:5
 	dev-qt/qtcore:5
 	dev-qt/qtconcurrent:5
@@ -33,7 +33,7 @@ COMMON_DEPEND="
 	sys-libs/zlib
 	x11-libs/libX11
 	x11-libs/libXext
-	video? ( media-libs/phonon[qt5] )"
+	video? ( media-libs/phonon[qt5(+)] )"
 RDEPEND="${COMMON_DEPEND}
 	app-text/ghostscript-gpl
 	app-text/psutils
@@ -42,10 +42,11 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig"
 
+#S=${WORKDIR}/texstudio-org-texstudio
+
 src_prepare() {
 	default
-	# find hunspell quazip utilities/poppler-data qtsingleapplication -delete || die #FIXME: review this later
-	find hunspell quazip qtsingleapplication -delete || die
+	# TODO: find hunspell quazip utilities/poppler-data qtsingleapplication -delete || die
 
 	if use video; then
 		sed "/^PHONON/s:$:true:g" -i ${PN}.pro || die
@@ -80,11 +81,11 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
+	xdg_desktop_database_update
 }
 
 pkg_postrm() {
-	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
+	xdg_desktop_database_update
 }
