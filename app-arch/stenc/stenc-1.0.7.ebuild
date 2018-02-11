@@ -3,7 +3,7 @@
 
 EAPI=6
 
-DESCRIPTION="SCSI Tape Encryption Manager enables AES support in LTO drives."
+DESCRIPTION="SCSI Tape Encryption Manager enables AES support for LTO drives."
 HOMEPAGE="https://sourceforge.net/projects/stenc/"
 SRC_URI="mirror://sourceforge/${PN}/source/${P}.tar.gz"
 

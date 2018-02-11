@@ -6,6 +6,7 @@
 		<name>Jonas Stein</name>
 	</maintainer>
 	<upstream>
+		<bugs-to>mailto:jcoleman1981@live.com</bugs-to>
 		<remote-id type="sourceforge">stenc</remote-id>
 	</upstream>
 	<longdescription>SCSI Tape Encryption Manager - Manages encryption on LTO 
