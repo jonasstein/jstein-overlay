@@ -21,7 +21,7 @@ S="${WORKDIR}"
 src_unpack() {
 	einfo "Downloading the latest Jabref development snapshot."
 	einfo "Upstream updates these a few times per day."
-	wget "http://builds.jabref.org/master/JabRef-portable_linux.tar.gz" -O ${P}.tar.gz || die "wget failed"
+	wget "https://builds.jabref.org/master/JabRef-portable_linux.tar.gz" -O ${P}.tar.gz || die "wget failed"
 	tar --extract --file=${P}.tar.gz JabRef/bin/JabRef.png || die "icon extraction failed"
 }
 
